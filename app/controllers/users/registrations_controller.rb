@@ -6,7 +6,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-     
+   
     @user = User.new
     @sex_options = User.sexes_i18n.invert.map{|key,value|[key,value]}
   end
@@ -39,7 +39,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def cancel
   #   super
   # end
-
   protected
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -50,15 +49,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
   #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
-  # end
-
+ def after_sign_up_path_for(resource)
+    root_path
+ end
  def configure_sign_up_params
      devise_parameter_sanitizer.permit(
-       :sign_up, keys: [ :name, :sex, :introduction, :career, :good_place,  :email, :password, :password_confirmation ])
+       :sign_up, keys: [ :name, :sex, :introduction, :career, :good_place,  :email, :password, :password_confirmation, :prefecture_id ])
  end
 
   def configure_account_update_params
      devise_parameter_sanitizer.permit(
-       :account_update, keys: [ :name, :sex, :introduction, :career, :good_place,  :email, :password, :password_confirmation ])
+       :account_update, keys: [ :name, :sex, :introduction, :career, :good_place,  :email, :password, :password_confirmation, :prefecture_id ])
   end
 end
