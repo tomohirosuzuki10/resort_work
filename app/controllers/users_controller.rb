@@ -11,7 +11,6 @@ class UsersController < ApplicationController
 
   def mypage
   end
-end
 
 private
   def set_user
@@ -19,5 +18,6 @@ private
   end
   
   def user_params
-      params.permit(:name, :sex, :introduction, :email, :prefecture_id)
+      params.permit(:name, :sex, :introduction, :email, :image, :prefecture_id)
   end
+end

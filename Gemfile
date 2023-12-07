@@ -29,6 +29,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 # deviseを使用できる
 gem 'devise'
+gem 'mini_magick'
+gem 'rmagick'
+
+gem 'image_processing', '~> 1.2'
  
   # bootstrapを使用できる
 gem 'bootstrap', '~> 4.6.0'

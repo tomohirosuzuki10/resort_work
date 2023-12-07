@@ -1,4 +1,10 @@
 <h1>マイページ</h1>
+    <% if @user.image.attached? %>
+  <p>
+    <strong><%= User.human_attribute_name("沖縄") %>:</strong>
+    <%= image_tag @user.image.variant(resize: "150x150")%>
+  </p>
+<% end %>
 
      <div class="d-flex align-items-center">
       <%= link_to mypage_edit_users_path do %>
