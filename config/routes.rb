@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions',
@@ -6,6 +7,13 @@ Rails.application.routes.draw do
     :confirmations => 'users/confirmations',
     :unlocks => 'users/unlocks',
   }
+  resource :users, only: [:edit, :update] do
+    collection do
+      get "mypage", :to => "users#mypage"
+      get "mypage/edit", :to => "users#edit"
+      put "mypage", :to => "users#update"
+    end
+  end
 
   devise_scope :user do
     root :to => "users/sessions#new"
