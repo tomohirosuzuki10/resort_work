@@ -18,7 +18,13 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
-   protected
+ def after_sign_in_path_for(user)
+     post_path
+   end
+ 
+   def after_sign_out_path_for(user)
+     root_path
+   end
 
   protected
  

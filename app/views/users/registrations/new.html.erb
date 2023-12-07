@@ -9,21 +9,21 @@
 　</div>
 　
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email, "メールアドレス" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "メールアドレス" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, "パスワード" %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "パスワード" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.label :password_confirmation, "パスワード" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "パスワード" %>
   </div>
   <div class="mb-3">
      <%= f.label :sex, "性別" %><br />
@@ -39,7 +39,7 @@
 　</div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "アカウント作成" %>
   </div>
 <% end %>
 
