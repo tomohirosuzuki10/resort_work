@@ -5,12 +5,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  def new
-   
+   def new
     @user = User.new
     @sex_options = User.sexes_i18n.invert.map{|key,value|[key,value]}
-  end
-
+   end
   # POST /resource
    def create
     super

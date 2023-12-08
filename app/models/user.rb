@@ -10,12 +10,16 @@ class User < ApplicationRecord
   enum sex: { gender: 0, woman: 1 }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+   # is_deletedがfalseならtrueを返すようにしている
+  def active_for_authentication?
+    super && (is_valid == false)
+  end
   private
 
   def verify_file_type
-    return unless user_icon.attached?  # ②
+    return unless image.attached?  # ②
 
     allowed_file_types = %w[image/jpg image/jpeg image/gif image/png]  # ③
-    errors.add(:user_icon, 'only jpg, jpeg, gif, png') unless allowed_file_types.include?(user_icon.blob.content_type)  # ④
+    errors.add(:user_icon, 'only jpg, jpeg, gif, png') unless allowed_file_types.include?(image.blob.content_type)  # ④
   end
 end
