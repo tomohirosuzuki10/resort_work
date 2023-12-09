@@ -25,6 +25,6 @@ Rails.application.routes.draw do
       patch "withdraw", :to => 'users#withdraw'
     end
   end
-
+ resources :posts
   
 end
