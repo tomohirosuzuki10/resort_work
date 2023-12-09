@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2023_12_08_062002) do
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "sex", null: false
+    t.integer "sex"
     t.text "introduction"
     t.string "career"
     t.integer "good_place"

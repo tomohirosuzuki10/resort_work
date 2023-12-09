@@ -4,21 +4,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
 
-  # GET /resource/sign_up
-   def new
-    @user = User.new
-    @sex_options = User.sexes_i18n.invert.map{|key,value|[key,value]}
-   end
-  # POST /resource
-   def create
-    super
-   end
-
+  # GET /resource/sig
   # GET /resource/edit
   # def edit
   #   super
   # end
-
+  def create
+    super
+  end
   # PUT /resource
    def update
     super
@@ -37,6 +30,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def cancel
   #   super
   # end
+  def after_sign_up_path_for(resource)
+    mypage_users_path
+  end
   protected
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -47,9 +43,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
   #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
- def after_sign_up_path_for(resource)
-    mypage_path
- end
+ 
  def configure_sign_up_params
      devise_parameter_sanitizer.permit(
        :sign_up, keys: [ :name, :sex, :introduction, :career, :good_place,  :email, :password, :password_confirmation, :prefecture_id ])

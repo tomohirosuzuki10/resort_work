@@ -13,11 +13,11 @@ class UsersController < ApplicationController
   end
   
   def withdraw
-    @user = User.find(current_customer.id)
+    @user = User.find(current_user.id)
     # is_deletedカラムをtrueに変更することにより削除フラグを立てる
-    @userr.update(is_deleted: true)
+    @user.update(is_valid: true)
     reset_session
-    flash[:notice] = "退会処理を実行いたしました"
+    flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
     redirect_to new_user_registration_path
   end
  private
@@ -26,6 +26,6 @@ class UsersController < ApplicationController
   end
   
   def user_params
-      params.permit(:name, :sex, :introduction, :email, :image, :prefecture_id)
+     params.permit(:name, :sex, :introduction, :career, :good_place,  :email, :password, :password_confirmation, :prefecture_id)
   end
 end

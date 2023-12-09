@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  validates :name, presence: true
+  
   validate :verify_file_type
   has_one_attached :image
   extend ActiveHash::Associations::ActiveRecordExtensions
@@ -11,9 +11,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
    # is_deletedがfalseならtrueを返すようにしている
-  def active_for_authentication?
-    super && (is_valid == false)
-  end
+  #def active_for_authentication?
+    #super && (is_valid == false)
+  #end
   private
 
   def verify_file_type
