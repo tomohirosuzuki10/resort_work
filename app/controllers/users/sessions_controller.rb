@@ -20,7 +20,7 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   def after_sign_in_path_for(user)
-     mypage_users_path
+     posts_users_path
   end
  
    def after_sign_out_path_for(user)

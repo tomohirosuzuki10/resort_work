@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
+    PER = 12
   def index
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.order(created_at: :desc).page(params[:page]).per(PER)
 # 投稿順(最新順)にデータを表示させるようにする
   end
 
   def show
+    @post = Post.find(params[:id])
   end
   
   def new
@@ -27,8 +29,7 @@ class PostsController < ApplicationController
    end
   end
   
-  def show
-  end
+  
 
   def update
   end

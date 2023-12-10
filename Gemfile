@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
 gem 'mini_magick'
 gem 'rmagick'
+gem 'kaminari'
 
 gem 'image_processing', '~> 1.2'
  

@@ -31,7 +31,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
   def after_sign_up_path_for(resource)
-    mypage_users_path
+    posts_path
   end
   protected
 
