@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+      @post = Post.find(params[:id])
   end
 
   def create
@@ -32,13 +33,30 @@ class PostsController < ApplicationController
   
 
   def update
+      @post = Post.find(params[:id])
+# 編集ページの送信ボタンから飛んできたときのparamsに格納されたidを元に、該当する投稿データを探して、変数に代入する
+  if @post.update(post_params)
+    redirect_to post_path, notice: "投稿を編集しました"
+  else
+    flash.now[:danger] = "編集に失敗しました"
+    render 'edit'
+  end
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+# 削除リンクから飛んできたときのparamsに格納されたidを元に、該当する投稿データを探して、変数に代入する
+  if @post.destroy
+    redirect_to posts_path, notice: "アウトプットを削除しました"
+  else
+    flash.now[:danger] = "削除に失敗しました"
+    render 'show'
+  end
   end
   
   private
   def post_params
-    params.require(:post).permit(:title, :post_content)
+    params.require(:post).permit(:title, :post_content, :post_images )
   end
 end

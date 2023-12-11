@@ -9,6 +9,9 @@
 <% @posts.each do |post| %>
   <span class="text-danger">投稿者：</span><%= post.user.name %><br>
   <span>タイトル：<%= link_to post.title, "posts/#{post.id}" %><br>
-  <%= post.post_content %>
+  <%= post.post_content %><br>
+   <!-- <%# post.post_images.each do |image| %>
+    <p><%#= image_tag image.service_url if image.attached? %></p>
+  <%#end %> -->
 <% end %>
 <%= paginate @posts %>
