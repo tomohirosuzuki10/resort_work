@@ -7,14 +7,14 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
   has_many :posts
-  validates :prefecture_id, numericality: { other_than: 1}
+  
   enum sex: { gender: 0, woman: 1 }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-   # is_deletedがfalseならtrueを返すようにしている
-  #def active_for_authentication?
-    #super && (is_valid == false)
-  #end
+   # is_validがfalseならtrueを返すようにしている
+  def active_for_authentication?
+    super && (is_valid == true)
+  end
   private
 
   def verify_file_type
