@@ -6,7 +6,8 @@ class User < ApplicationRecord
   has_one_attached :image
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
-  has_many :posts
+  has_many :posts, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   
   enum sex: { gender: 0, woman: 1 }
   devise :database_authenticatable, :registerable,
