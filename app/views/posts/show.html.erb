@@ -2,7 +2,15 @@
 <%= @post.title %><br>
 
 <h3>本文</h3>
-<%= @post.post_content %><br>
+<%= @post.post_content %>
+<h3>コメント</h3>
+<%= form_with model:[@post, @comment], local: false do |f| %>
+ <%= f.text_area :comment_content, rows:'5',placeholder: "コメント", class:"form-control mt-3"  %>
+   <div class="text-right">
+    <%= f.submit "Submit", class: "btn btn-primary mt-3 mb-3" %>
+   </div>
+<% end %>
+  
 　<% if @post.favorited_by?(current_user) %>
     <%= link_to post_favorites_path(@post.id), method: :delete do %>
         <span>❤︎</span>
@@ -12,6 +20,19 @@
         <span>♡</span>
     <% end %>
 　<% end %>
+<br>
+<h3>コメント一覧</h3>
+<% @comments.each do |c| %>
+  <div>
+    <%= c.user.name %></a>
+    <%= c.comment_content %>
+     <%= link_to post_comment_path(@post.id), method: :delete do %>
+      コメント削除
+      <% end %>
+　　<hr>
+  </div>
+<% end %>
+ 
 <br>
 <%= link_to"編集", "/posts/#{@post.id}/edit" %>
 <%= link_to"削除", "/posts/#{@post.id}", method: :delete %>

@@ -7,6 +7,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments  #投稿詳細に関連付けてあるコメントを全取得
+    @comment = Comment.new
   end
   
   def new

@@ -8,6 +8,7 @@ class User < ApplicationRecord
   belongs_to :prefecture
   has_many :posts, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :comments, dependent: :destroy
   
   enum sex: { gender: 0, woman: 1 }
   devise :database_authenticatable, :registerable,
