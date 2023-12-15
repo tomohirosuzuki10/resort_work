@@ -1,22 +1,31 @@
-<h1>投稿フォーム</h1>
+<div class="cover-new">
+<div class="containerh">
+ <div class="row justify-content-center">
+  <h1 class="font-weight-normal mt-3">新しい思い出</h2>
+ </div>
+ 
+ <div class="row justify-content-center">
+  <%= form_with model: @post do |f|%>
+  
+   <div class="form-group">
+     <label class="form-label">タイトル</label>
+     <%= f.text_field :title, class: "form-control"%>
+   </div>
 
-<%= form_with model: @post do |f|%>
-
-  <div class="field">
-    <%= f.label :title, "タイトル" %></br>
-    <%= f.text_field :title%>
-  </div>
-
-  <div class="field">
-    <%= f.label :post_content, "本文" %></br>
-    <%= f.text_area :post_content%>
-  </div>
-  <div class="field">
-   <%= f.label :post_images, "投稿画像" %></br>
-   <%= f.file_field :post_images, multiple: true %>
-  </div>
-  <div class="submit">
-    <%= f.submit "送信"%>
-  </div>
- <%= link_to "投稿一覧", posts_path %>
+ 　 <div class="form-group　text-center">
+    <label class="form-label">感想</label>
+    <%= f.text_area :post_content, rows: 10, class: "form-control", style: "width:100% high:100%"%>
+   </div>
+   <br>
+   <div class="form-group">
+     <label class="form-label">画像</label></br>
+     <%= f.file_field :post_images, multiple: true %>
+   </div>
+   </br>
+   <div class="submit"> 
+    <%= f.submit "投稿する", class: "btn btn-success"%>
+   </div>
+ </div>
+</div>
+</div>
 <% end %>

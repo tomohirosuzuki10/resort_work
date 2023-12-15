@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    PER = 12
+    PER = 6
   def index
     @posts = Post.order(created_at: :desc).page(params[:page]).per(PER)
 # 投稿順(最新順)にデータを表示させるようにする

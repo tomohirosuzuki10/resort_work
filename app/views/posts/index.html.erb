@@ -1,19 +1,26 @@
-<h1>投稿一覧</h1>
+<div class="row justify-content-center">
+     <h1 class="font-weight-normal mt-3">旅行投稿一覧</h1>
+</div>
 
-
-<% if user_signed_in? %>
-  <%= button_to "投稿", {controller: 'posts', action: 'new'}, {method: :get} %>
-<% end %>
-
-
-<% @posts.each do |post| %>
-  <span class="text-danger">投稿者：</span><%= post.user.name %><br>
-  <span>タイトル：<%= link_to post.title, "posts/#{post.id}" %><br>
-  <%= post.post_content %><br>
-   <% if post.post_images.attached? %>
-    <% post.post_images.each do |image| %>
-      <p><%= image_tag image %></p>
-    <% end %>
-  <% end %> 
-<% end %>
-<%= paginate @posts %>
+<div class="container">
+ <div class="row justify-content-center">
+　 <% @posts.each do |post| %>
+　  <div class="one-post border border-3 m-1"> 
+　  <i class="fa-solid fa-location-pin">沖縄</i><br>
+  　 <% if post.post_images.attached? %>
+      <% post.post_images.each do |image| %>
+      <%= image_tag image, size: '300x200' %>
+    　<% end %>
+    <% end %><br>
+    <span class="text-danger">投稿者：</span>
+  　<%= post.user.name %><br>
+  　<span>タイトル：<%= link_to post.title, "posts/#{post.id}" %></span>
+  　<br>
+  　<%= post.post_content %>
+    </div>
+   <% end %>
+ </div>
+</div>
+ <div class="d-flex justify-content-end">
+ <%= paginate @posts%>
+ </div>

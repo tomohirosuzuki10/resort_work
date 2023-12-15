@@ -9,7 +9,8 @@
         <input class="form-control samuraimart-header-search-input">
       </div>
       <div class="input-group">
-        <button type="submit" class="btn samuraimart-header-search-button"><i class="fas fa-search samuraimart-header-search-icon"></i></button>
+        <button type="submit" class="btn samuraimart-header-search-button">
+          </button>
       </div>
     </form>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,6 +26,10 @@
           <%= link_to posts_path, class: "nav-link" do %>
             <label>home</label>
           <% end %>
+        <li class="nav-item mr-5">
+          <% if user_signed_in? %>
+  　       <%= button_to "投稿", {controller: 'posts', action: 'new'}, {method: :get} %>
+　　      <% end %>
       　<li class="nav-item mr-5">
           <%= link_to mypage_users_path, class: "nav-link" do %>
             <label>マイページ</label>
