@@ -11,6 +11,11 @@ h1 {
   background-blend-mode: normal;
   background-size: 100% 100%;
 }
+h2{
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+  font-style: oblique;
+  text-shadow: 1px 1px 1px gray;
+}
 .form-label {
   font-size: 20px;
   background-color: lightblue;
@@ -18,4 +23,26 @@ h1 {
 
 .form-group {
   width: 600px;
+}
+.post-index {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.comment-show {
+  display: block;
+  padding: 0 15px ;
+}
+h3 {
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+.comment-space{
+  margin-left: 60px;
+}
+.show-span {
+  margin-left: 160px;
+}
+.fa-size {
+  font-size: 1.5em;
 }

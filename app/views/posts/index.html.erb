@@ -3,20 +3,21 @@
 </div>
 
 <div class="container">
- <div class="row justify-content-center">
-　 <% @posts.each do |post| %>
-　  <div class="one-post border border-3 m-1"> 
-　  <i class="fa-solid fa-location-pin">沖縄</i><br>
-  　 <% if post.post_images.attached? %>
+ 
+ <div class="post-index">
+   <% @posts.each do |post| %>
+    <div class=" border border-3 m-1"> 
+     <div>
+      <i class="fa-solid fa-location-pin">沖縄</i>
+       <span class="show-span">@<%= post.user.name %></span>
+     </div>
+     <% if post.post_images.attached? %>
       <% post.post_images.each do |image| %>
       <%= image_tag image, size: '300x200' %>
-    　<% end %>
+     <% end %>
     <% end %><br>
-    <span class="text-danger">投稿者：</span>
-  　<%= post.user.name %><br>
-  　<span>タイトル：<%= link_to post.title, "posts/#{post.id}" %></span>
-  　<br>
-  　<%= post.post_content %>
+    <span>タイトル：<%= link_to post.title, "posts/#{post.id}" %></span>
+    <br>
     </div>
    <% end %>
  </div>
