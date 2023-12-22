@@ -14,11 +14,8 @@ Rails.application.routes.draw do
     delete "logout", :to => "users/sessions#destroy"
   end
   
-  resource :users, only: [:edit, :update, :unsubscribe, :withdraw] do
+  resources :users, only: [:show,:edit, :update, :unsubscribe, :withdraw] do
     collection do
-      get "mypage", :to => "users#mypage"
-      get "mypage/edit", :to => "users#edit"
-      put "mypage", :to => "users#update"
       # 退会確認画面
       get "unsubscribe", :to => 'users#unsubscribe'
      # 論理削除用のルーティング

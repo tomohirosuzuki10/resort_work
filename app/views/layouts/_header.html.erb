@@ -31,7 +31,7 @@
   　       <%= button_to "投稿", {controller: 'posts', action: 'new'}, {method: :get} %>
 　　      <% end %>
       　<li class="nav-item mr-5">
-          <%= link_to mypage_users_path, class: "nav-link" do %>
+          <%= link_to "/users/#{current_user.id}", class: "nav-link" do %>
             <label>マイページ</label>
           <% end %>
         </li>

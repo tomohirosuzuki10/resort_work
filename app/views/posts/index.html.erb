@@ -7,9 +7,9 @@
  <div class="post-index">
    <% @posts.each do |post| %>
     <div class=" border border-3 m-1"> 
-     <div>
+     <div class ="text-right">
       <i class="fa-solid fa-location-pin">沖縄</i>
-       <span class="show-span">@<%= post.user.name %></span>
+       @<%= link_to post.user.name, "users/#{post.user.id}" %>
      </div>
      <% if post.post_images.attached? %>
       <% post.post_images.each do |image| %>
@@ -18,6 +18,7 @@
     <% end %><br>
     <span>タイトル：<%= link_to post.title, "posts/#{post.id}" %></span>
     <br>
+    <%= post.post_content %>
     </div>
    <% end %>
  </div>

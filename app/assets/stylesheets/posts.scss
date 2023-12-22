@@ -1,16 +1,12 @@
+body{
+  background-color: #eaf6fd;
+}
 h1 {
   font-family: serif;
 }// Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.cover-new {
-  height: 100%;
-  width: 100%;
-  background-image: url(/assets/sango.jpg);
-  background-color: rgba(255, 255, 255, 0.4);
-  background-blend-mode: normal;
-  background-size: 100% 100%;
-}
+
 h2{
   font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
   font-style: oblique;
@@ -45,4 +41,10 @@ h3 {
 }
 .fa-size {
   font-size: 1.5em;
+}
+.contener{
+  max-width: 100%;
+}
+.boder {
+ color: #ffffff;
 }

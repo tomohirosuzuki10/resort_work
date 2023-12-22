@@ -1,25 +1,42 @@
- <h1>編集する</h1>
-<%= form_with url: mypage_users_path, local: true, method: :put do |f| %>
-　<h4>名前</h4>
-　<%= f.text_field :name, value: @user.name %>
-　<h4>メールアドレス</h4>
-　<%= f.email_field :email, value: @user.email %><br>
-　<h4>働いてる地域</h4>
-　<%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name ) %>
-　<h4>自己紹介</h4>
-　<%=f.text_area :introduction, autofocus: "true", value: @user.introduction %>
-　<h4>性別</h4>
-　<div class="field">
-  <%= f.label :image　%>
-  <%= f.file_field :image %>
+<div class ="container">
+　<div class="border-bottom text-center">
+　 <h2 >プロフィール編集</h2>
 　</div>
 　
+　<div class="row justify-content-center">
+  <%= form_with url: user_path, local: true, method: :put do |f| %>
+   <div class="edit-form">
+　  <label for="form1" class="edit-form-label">名前</label><br>
+　  <%= f.text_field :name,size: 30, value: @user.name %>
+ 　</div>
+ 　<div class="edit-form mt-1">
+　  <label for="form2" class="edit-form-label">メールアドレス</label><br>
+　  <%= f.email_field :email, size: 30, value: @user.email %><br>
+　 </div>
+　 <div class="edit-form mt-1">
+　  <label for="form3" class="edit-form-label">働いてる地域</label><br>
+　  <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name ) %>
+　 </div>
+　 <div class="edit-form mt-1">
+　  <label for="form4" class="edit-form-label">自己紹介</label><br>
+　  <%=f.text_area :introduction, size: " 30 x 5", autofocus: "true", value: @user.introduction %>
+　 </div>
+　 <div class="edit-form mt-1">
+　　<label for="form5" class="edit-form-label">性別</label><br>
+　 </div>
+　 <div class="edit-form">
+    <%= f.label :image,"写真"%>
+    <%= f.file_field :image %>
+　 </div>
+　</div>
 　
+　 <div class="text-center border-bottom mb-1">
+　   <%= f.submit '保存' %>
+　 </div>
+　 <%= link_to unsubscribe_users_path do %>
+        <h3 class="text-center">退会する</h3>
+　 <% end %>
 　
-　
-　<%= f.submit '保存' %>
-　<%= link_to unsubscribe_users_path do %>
-        <h1>退会する</h1>
-　<% end %>
-　
-<% end %>
+ <% end %>
+
+</div>
