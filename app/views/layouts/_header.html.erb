@@ -6,11 +6,10 @@
     
     <form class="form-inline">
       <div class="form-group">
-        <input class="form-control samuraimart-header-search-input">
-      </div>
-      <div class="input-group">
-        <button type="submit" class="btn samuraimart-header-search-button">
-          </button>
+       <%= form_with url: search_posts_path, local: true, method: :get do |form| %>
+        <%= form.text_field :keyword %>
+        <%= form.submit "検索" %>
+       <% end %>
       </div>
     </form>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,15 +21,15 @@
       <ul class="navbar-nav ml-auto mr-5 mt-2">
       <!-- user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド -->
       <% if user_signed_in? %>
-      　<li class="nav-item mr-5">
-          <%= link_to posts_path, class: "nav-link" do %>
+        <li class="nav-item mr-5">
+        <%= link_to posts_path, class: "nav-link" do %>
             <label>home</label>
           <% end %>
         <li class="nav-item mr-5">
           <% if user_signed_in? %>
-  　       <%= button_to "投稿", {controller: 'posts', action: 'new'}, {method: :get} %>
-　　      <% end %>
-      　<li class="nav-item mr-5">
+           <%= button_to "投稿", {controller: 'posts', action: 'new'}, {method: :get} %>
+          <% end %>
+        <li class="nav-item mr-5">
           <%= link_to "/users/#{current_user.id}", class: "nav-link" do %>
             <label>マイページ</label>
           <% end %>

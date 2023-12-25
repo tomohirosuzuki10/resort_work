@@ -5,14 +5,19 @@
  </div>
  
  <div class="row justify-content-center">
-  <%= form_with model: @post do |f|%>
+   <%= form_with model: @post do |f|%>
   
    <div class="form-group">
      <label class="form-label">タイトル</label>
      <%= f.text_field :title, class: "form-control"%>
    </div>
+   
+   <div class="form-group">
+     <label class="form-label">場所</label>
+     <%= f.text_field :post_place, class: "form-control"%>
+   </div>
 
- 　 <div class="form-group　text-center">
+   <div class="form-group　text-center">
     <label class="form-label">感想</label>
     <%= f.text_area :post_content, rows: 10, class: "form-control", style: "width:100% high:100%"%>
    </div>

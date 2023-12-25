@@ -7,7 +7,7 @@
 }
 .user-show-image{
     width: 100%;
-    height: 400px;
+    height: 350px;
     background-color: #eaf6fd;
     text-align: center;
     //height: 900px;
@@ -32,7 +32,23 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
+  border-top: 1px solid #dee2e6;
+  
 }
 .edit-form {
     margin: 0 0 0 75px ;
+}
+.edit-form-label{
+    margin-top: 1px;
+}
+.edit-form-bottan {
+    text-align: center;
+    margin: 10px;
+}
+.edit-withdrawal {
+    border-top: 1px solid #dee2e6;
+    padding-top: 40px;
+    color: red;
+    text-align: center;
+    
 }
