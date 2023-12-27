@@ -18,6 +18,10 @@
      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name ) %>
     </div>
     <div class="edit-form mt-1">
+       <label for="form3" class="edit-form-label">性別</label><br>
+       <%= f.select :sex, User.enum_options_for_select(:sex) %>
+    </div>
+    <div class="edit-form mt-1">
      <label for="form4" class="edit-form-label">自己紹介</label><br>
      <%=f.text_area :introduction, size: " 30 x 5", autofocus: "true", value: @user.introduction %>
     </div>

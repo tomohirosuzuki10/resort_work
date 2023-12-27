@@ -1,6 +1,24 @@
 ja:
-  enums:
-    user:
-      sex:
-        gender: 男性
+  activerecord:
+    models:
+      user: リゾートワーカー
+      post: リゾートワーク情報投稿
+    attributes:
+      user:
+        email: メールアドレス
+        password: パスワード
+        name: 名前
+        introduction: 自己紹介
+        sex: 性別
+      user/sex:
+        man: 男性
         woman: 女性
+      post:
+        title: 題名
+        post_content: 投稿内容
+    errors:
+      messages:
+        record_invalid: 'バリデーションに失敗しました: %{errors}'
+        restrict_dependent_destroy:
+          has_one: "%{record}が存在しているので削除できません"
+          has_many: "%{record}が存在しているので削除できません"

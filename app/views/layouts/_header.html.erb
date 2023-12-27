@@ -4,14 +4,13 @@
       <%= image_tag "/images/resort_work.png", size: "80x80" %>
     <% end %>
     
-    <form class="form-inline">
-      <div class="form-group">
-       <%= form_with url: search_posts_path, local: true, method: :get do |form| %>
+    <div class="form-inline">
+       <%= form_with url: search_path, local: true, method: :get do |form| %>
         <%= form.text_field :keyword %>
         <%= form.submit "検索" %>
        <% end %>
-      </div>
-    </form>
+    </div>
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

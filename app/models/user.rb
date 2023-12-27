@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
   
-  enum sex: { gender: 0, woman: 1 }
+  enum sex: { man: 0, woman: 1 }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
    # is_validがfalseならtrueを返すようにしている
