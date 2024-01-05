@@ -20,10 +20,27 @@ h2{
 .form-group {
   width: 600px;
 }
+
 .post-index {
+  
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 10px auto;
+  align-items: center;
+  justify-content: center;
+  
+  
+}
+.post-article{
+  width: 333px;
+  height: 350px;
+  border: 1px solid #dee2ed;
+  margin: 5px;
+  background-color: #ffffff;
+}
+.post-article-name{
+  display: flex;
+  justify-content: space-between;
 }
 .comment-show {
   display: block;
