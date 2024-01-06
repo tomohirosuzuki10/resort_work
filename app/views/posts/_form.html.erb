@@ -17,12 +17,14 @@
      <%= f.text_field :post_place, class: "form-control"%>
    </div>
 
-   <div class="form-group　text-center">
+   <div class="form-group text-center">
     <label class="form-label">感想</label>
     <%= f.text_area :post_content, rows: 10, class: "form-control", style: "width:100% high:100%"%>
    </div>
    <br>
    <div class="form-group">
+     <label class="form-label">画像</label></br>
+     <%= f.file_field :post_images, multiple: true %>
      <label class="form-label">画像</label></br>
      <%= f.file_field :post_images, multiple: true %>
    </div>

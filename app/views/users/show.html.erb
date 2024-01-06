@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
    <div class="col-4 mt-5 ">
      <% if @user.image.attached? %>
-      <%= image_tag @user.image,variant( resize: "300x250", gravity: "center") %>
+      <%= image_tag @user.image, class: "icon-mini"%>
      <% end %>
    </div>
    
@@ -17,9 +17,11 @@
       <P class="mt-2"><%= @user.introduction %></P>
    </div>
    <div class="col-2">
-     <% if current_user.id == @user.id %>
-      <%= link_to "プロフィール編集", "#{@user.id}/edit" %>
-     <% end %>
+      <% if current_user.present? %>
+        <% if current_user.id == @user.id %>
+          <%= link_to "プロフィール編集", "#{@user.id}/edit" %>
+        <% end %>
+      <% end %>
    </div>
   </div>
 </div>
