@@ -14,6 +14,10 @@ module.exports = function(api) {
         '.'
     )
   }
+  {
+    "presets": ["@babel/preset-env"],
+    "plugins": ["@babel/plugin-proposal-private-methods"]
+  }
 
   return {
     presets: [
