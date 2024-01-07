@@ -14,10 +14,6 @@ module.exports = function(api) {
         '.'
     )
   }
-  {
-    "presets": ["@babel/preset-env"],
-    "plugins": ["@babel/plugin-proposal-private-methods"]
-  }
 
   return {
     presets: [
@@ -47,6 +43,12 @@ module.exports = function(api) {
       '@babel/plugin-transform-destructuring',
       [
         '@babel/plugin-proposal-class-properties',
+        {
+          loose: true
+        }
+      ],
+      [
+        '@babel/plugin-transform-private-methods',
         {
           loose: true
         }
