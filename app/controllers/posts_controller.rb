@@ -45,15 +45,14 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-# 削除リンクから飛んできたときのparamsに格納されたidを元に、該当する投稿データを探して、変数に代入する
-  if @post.destroy
-    redirect_to posts_path, notice: "アウトプットを削除しました"
-  else
-    flash.now[:danger] = "削除に失敗しました"
-    render 'show'
-  end
+      @post = Post.find(params[:id])
+  # 削除リンクから飛んできたときのparamsに格納されたidを元に、該当する投稿データを探して、変数に代入する
+    if @post.destroy
+      redirect_to posts_path, notice: "アウトプットを削除しました"
+    else
+      flash.now[:danger] = "削除に失敗しました"
+      render 'show'
+    end
   end
   
   private
