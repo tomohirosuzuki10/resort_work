@@ -1,14 +1,16 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm samuraimart-header-container">
-    <%= link_to posts_path do %>
+    <%= link_to root_path do %>
       <%= image_tag "/images/resort_work.png", size: "80x80" %>
     <% end %>
     
     <div class="form-inline">
-       <%= form_with url: search_path, local: true, method: :get do |form| %>
-        <%= form.text_field :keyword %>
-        <%= form.submit "検索" %>
-       <% end %>
+      <% if user_signed_in? %>
+        <%= form_with url: search_path, local: true, method: :get do |form| %>
+          <%= form.text_field :keyword %>
+          <%= form.submit "検索" %>
+        <% end %>
+      <% end %>
     </div>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
