@@ -23,6 +23,8 @@ Rails.application.routes.draw do
       patch "withdraw", :to => 'users#withdraw'
     end
   end
+
+  post '/tops/guest_sign_in', to: 'tops#guest_sign_in'
  
  resources :posts do
    resource :favorites, only: [:create, :destroy]
