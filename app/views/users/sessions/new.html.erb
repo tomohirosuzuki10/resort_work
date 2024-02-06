@@ -1,33 +1,30 @@
 
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-5">
-      <h3 class="mt-3 mb-3">ログイン</h3>
-
-      <hr>
-
+<div class="sessions">
+    <div class="sessions-box">
+      <h2>ログイン</h2>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
-        <div class="form-group">
+        <div class="sessions-email">
           <%=
             f.email_field :email,
-            class: "form-control #{"is-invalid" if alert } samuraimart-login-input",
+            size:"30",
+            class:"email-form",
             autofocus: "true",
             required: "required",
             autocomplete: "email",
             placeholder: "メールアドレス"
-    %>
+          %>
           <% if alert %>
-          <span class="samuraimart-error-message">
-            <strong>メールアドレスが正しくない可能性があります。</strong>
-          </span>
+            <span class="samuraimart-error-message">
+              <strong>メールアドレスが正しくない可能性があります。</strong>
+            </span>
           <% end %>
         </div>
 
-        <div class="form-group">
+        <div class="sessions-password">
           <%=
             f.password_field :password,
-            class: "form-control #{"is-invalid" if alert } samuraimart-login-input",
+            size:"30",
             autofocus: "true",
             autocomplete: "current-password",
             placeholder: "パスワード"
@@ -40,25 +37,22 @@
           <% end %>
         </div>
 
-        <div class="form-group">
-          <div class="form-check">
-            <%=  f.check_box :remember_me, class: "form-check-input" %>
-            <%=  f.label :remember_me, "次回から自動的にログインする", class: "form-check-label samuraimart-check-label w-100" %>
+        <div class="">
+          <div class="sessions-auto-rogin">
+            <%=  f.check_box :remember_me, class: "" %>
+            <%=  f.label :remember_me, "次回から自動的にログインする" %>
           </div>
         </div>
 
-        <div class="form-group">
-          <%=  f.submit "ログイン", class: "mt-3 btn samuraimart-submit-button w-100" %>
+        <div class="sessions-rogin">
+          <%=  f.submit "ログイン" %>
         </div>
-
-        <%= link_to "パスワードをお忘れの場合", new_user_password_path, class: "btn btn-link mt-3 d-flex justify-content-center samuraimart-login-text" %>
-        <% end %>
-
-      <hr>
-
-      <div class="form-group">
-        <%= link_to "新規登録", new_user_registration_path, class: "btn btn-link mt-3 d-flex justify-content-center samuraimart-login-text" %>
+        <div class="sessions-password-forget">
+          <%= link_to "パスワードをお忘れの場合", new_user_password_path%>
+          <% end %>
+        </div>
+      <div class="sessions-akount">
+        <%= link_to "新規登録", new_user_registration_path %>
       </div>
     </div>
-  </div>
 </div>

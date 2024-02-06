@@ -1,59 +1,56 @@
 <div class="show-cover">
-<div class="container">
+  <div class="container">
  
- <div class="row justify-content-center mt-2">
-  <div class="col-6">
-    <% if @post.post_images.attached? %>
-      <% @post.post_images.each do |image| %>
-       <%= image_tag image, class: "w-100 img-fuild" %>
-      <% end %>
-    <% end %>
-  </div>
-  
-  <div class="col-5">
-    <h2 class="text-center my-3">
-     <%= @post.title %>
-    </h2>
-    <div class="h-50 text-center">
-     <%= @post.post_content %>
-    </div>
-     <%= form_with model:[@post, @comment], local: false do |f| %>
-      <%= f.text_area :comment_content, rows:'2',placeholder: "コメント", class:"form-control mt-3"  %>
-      <%= f.submit "コメントする", class: "btn btn-primary mt-3 mb-3" %>
-     <% end %>
-  </div>
-  
-  <div class="col-1">
-   <%= link_to "/posts/#{@post.id}/edit" do %>
-   <i class="fa-regular fa-pen-to-square fa-size" style="color: #111722;"></i>
-   <% end %>
-   <%= link_to"/posts/#{@post.id}", method: :delete do %>
-    <i class="fa-regular fa-trash-can fa-size" style="color: #e52a33;"></i>
-   <% end %>
-  </div>
- </div>
-   <h3 class="border-bottom">コメント一覧
-    <% if @post.favorited_by?(current_user) %>
-       <%= link_to post_favorites_path(@post.id), method: :delete do %>
-        <span>❤︎</span>
-       <% end %>
-      <% else %>
-       <%= link_to post_favorites_path(@post.id), method: :post do %>
-        <span class="color-red">♡お気に入りする</span>
-       <% end %>
-      <% end %>
-   </h3>
-    <% @comments.each do |comment| %><br>
-     <%= comment.user.name %>
-      <span class="comment-space"><%=comment.comment_content %></span>
-      <% if current_user.id == comment.user_id %>
-        <%= link_to post_comment_path(@post.id, comment.id), method: :delete do %>
-        <span class="comment-space">コメント削除</span>
+    <div class="row justify-content-center ">
+      <div class="col-6">
+        <% if @post.post_images.attached? %>
+          <% @post.post_images.each do |image| %>
+          <%= image_tag image, class: "w-100 show-post-img" %>
+          <% end %>
         <% end %>
-      <% end %>
-    <% end %>
+      </div>
+      
+      <div class="col-5">
+        <h2 class="text-center my-3">
+          <%= @post.title %>
+        </h2>
+        <div class="h-50 text-center">
+          <%= @post.post_content %>
+        </div>
+        <%= form_with model:[@post, @comment], local: false do |f| %>
+          <%= f.text_area :comment_content, rows:'2',placeholder: "コメント", class:"form-control mt-3"  %>
+          <%= f.submit "コメントする", class: "btn btn-primary mt-3 mb-3" %>
+        <% end %>
+      </div>
+      
+      <div class="col-1">
+        <%= link_to "/posts/#{@post.id}/edit" do %>
+          <i class="fa-regular fa-pen-to-square fa-size" style="color: #111722;"></i>
+        <% end %>
+        <%= link_to"/posts/#{@post.id}", method: :delete do %>
+          <i class="fa-regular fa-trash-can fa-size" style="color: #e52a33;"></i>
+        <% end %>
+      </div>
+    </div>
+      <h3 class="border-bottom">コメント一覧
+        <% if @post.favorited_by?(current_user) %>
+          <%= link_to post_favorites_path(@post.id), method: :delete do %>
+            <span>❤︎</span>
+          <% end %>
+          <% else %>
+          <%= link_to post_favorites_path(@post.id), method: :post do %>
+            <span class="color-red">♡お気に入りする</span>
+          <% end %>
+          <% end %>
+      </h3>
+        <% @comments.each do |comment| %><br>
+          <%= comment.user.name %>
+          <span class="comment-space"><%=comment.comment_content %></span>
+          <% if current_user.id == comment.user_id %>
+            <%= link_to post_comment_path(@post.id, comment.id), method: :delete do %>
+              <span class="comment-space">コメント削除</span>
+            <% end %>
+          <% end %>
+        <% end %>
+  </div>
 </div>
-</div>
-<br>
-
-

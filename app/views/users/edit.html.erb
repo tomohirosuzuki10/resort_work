@@ -1,43 +1,45 @@
-<div class ="container">
-  <div class="border-bottom text-center mt-2">
-    <h2 >プロフィール編集</h2>
-  </div>
+<div class="show-user-edit">
+  <div class ="container">
+    <div class="border-bottom text-center pt-3">
+      <h2 >プロフィール編集</h2>
+    </div>
 
-  <div class="row justify-content-center mt-3">
-   <%= form_with url: user_path, local: true, method: :put do |f| %>
-    <div class="edit-form">
-     <label for="form1" class="edit-form-label">名前</label><br>
-     <%= f.text_field :name,size: 30, value: @user.name %>
-    </div>
-    <div class="edit-form mt-1">
-     <label for="form2" class="edit-form-label">メールアドレス</label><br>
-     <%= f.email_field :email, size: 30, value: @user.email %><br>
-    </div>
-    <div class="edit-form mt-1">
-     <label for="form3" class="edit-form-label">働いてる地域</label><br>
-     <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name ) %>
-    </div>
-    <div class="edit-form mt-1">
-       <label for="form3" class="edit-form-label">性別</label><br>
-       <%= f.select :sex, User.enum_options_for_select(:sex) %>
-    </div>
-    <div class="edit-form mt-1">
-     <label for="form4" class="edit-form-label">自己紹介</label><br>
-     <%=f.text_area :introduction, size: " 30 x 5", autofocus: "true", value: @user.introduction %>
-    </div>
-    <div class="edit-form mt-1">
-     <label for="form5" class="edit-form-label">性別</label><br>
-    </div>
-    <div class="edit-form">
-     <%= f.label :image,"写真"%>
-     <%= f.file_field :image %>
-    </div>
-    <div class="edit-form-bottan">
-          <%= f.submit '保存' %>
-    </div>
-   <% end %>
-  </div>
-    <%= link_to unsubscribe_users_path do %>
-     <h3 class="edit-withdrawal">退会する</h3>
+    <div class="row justify-content-center mt-3">
+    <%= form_with url: user_path, local: true, method: :put do |f| %>
+      <div class="edit-form">
+      <label for="form1" class="edit-form-label">名前</label><br>
+      <%= f.text_field :name,size: 30, value: @user.name %>
+      </div>
+      <div class="edit-form mt-1">
+      <label for="form2" class="edit-form-label">メールアドレス</label><br>
+      <%= f.email_field :email, size: 30, value: @user.email %><br>
+      </div>
+      <div class="edit-form mt-1">
+      <label for="form3" class="edit-form-label">働いてる地域</label><br>
+      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name ) %>
+      </div>
+      <div class="edit-form mt-1">
+        <label for="form3" class="edit-form-label">性別</label><br>
+        <%= f.select :sex, User.enum_options_for_select(:sex) %>
+      </div>
+      <div class="edit-form mt-1">
+      <label for="form4" class="edit-form-label">自己紹介</label><br>
+      <%=f.text_area :introduction, size: " 30 x 5", autofocus: "true", value: @user.introduction %>
+      </div>
+      <div class="edit-form mt-1">
+      <label for="form5" class="edit-form-label">性別</label><br>
+      </div>
+      <div class="edit-form">
+      <%= f.label :image,"写真"%>
+      <%= f.file_field :image %>
+      </div>
+      <div class="edit-form-bottan">
+            <%= f.submit '保存' %>
+      </div>
     <% end %>
+    </div>
+      <%= link_to unsubscribe_users_path do %>
+      <h3 class="edit-withdrawal">退会する</h3>
+      <% end %>
+  </div>
 </div>

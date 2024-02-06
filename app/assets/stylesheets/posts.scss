@@ -16,11 +16,16 @@ h2{
   font-size: 20px;
   background-color: lightblue;
 }
+.new-post{
+  background-color: #eaf6fd;
+}
 
 .form-group {
   width: 600px;
 }
-
+.show-cover {
+  background-color: #eaf6fd;
+}
 .post-index {
   
   display: flex;
@@ -64,4 +69,9 @@ h3 {
 }
 .boder {
  color: #ffffff;
+}
+.show-post-img{
+  width: 440px;
+  height: 337px;
+  object-fit: contain;
 }

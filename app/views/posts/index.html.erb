@@ -20,9 +20,9 @@
         <%= image_tag image, size: '330x250' %>
        <% end %>
      <% end %><br>
-     <span>タイトル:<%= link_to post.title, "users/#{post.user.id}" %></span>
+     <span>タイトル:<%= link_to post.title, post_path(post.id) %></span>
      <br>
-     <%= post.post_content.truncate(30) %>
+     <%= post.post_content.truncate(34) %>
     </div>
    <% end %>
  </div>

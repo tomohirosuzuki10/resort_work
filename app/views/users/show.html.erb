@@ -28,11 +28,11 @@
 
 <div class="contener m-0">
  
- <div class="show-post-index">
+ <div class="show-user-index">
    <% @posts.each do |post| %>
-    <div class="border border-3 m-3"> 
+    <div class="show-user-article"> 
      <div>
-      <i class="fa-solid fa-location-pin">沖縄</i>
+      <i class="fa-solid fa-location-pin"></i><%= post.post_place %>
      </div>
      <% if post.post_images.attached? %>
       <% post.post_images.each do |image| %>
@@ -42,7 +42,7 @@
      <span>タイトル：<%= post.title %><span>
      <br>
      <div class="mb-2">
-      <%= link_to post.post_content, post_path(post) %>
+      <%= link_to post.post_content.truncate(70), post_path(post) %>
      </div>
     </div>
    <% end %>

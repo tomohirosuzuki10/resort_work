@@ -18,14 +18,14 @@
    //background-postion-y: center;
 }
 
-.show-purofiru{
-    
-}
+
 .icon-mini{
-    width: 50px;
-    height: 50px;
+    margin-left: 20%;
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 50px;
+    border-radius: 200px;
     cursor: pointer;
   }
 .show-post-index {
@@ -52,3 +52,23 @@
     text-align: center;
     
 }
+.show-user-index {
+  
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px auto;
+    align-items: center;
+    justify-content: center;
+    
+    
+  }
+.show-user-article {
+    width: 402px;
+    height: 420px;
+    border: 1px solid #dee2ed;
+    margin: 5px;
+    background-color: #ffffff;
+  }
+  .show-user-edit {
+    background-color: #eaf6fd;
+  }

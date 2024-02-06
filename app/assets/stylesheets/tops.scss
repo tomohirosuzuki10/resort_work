@@ -4,3 +4,422 @@
 body{
   background-color: #ffffff;
 }
+@media screen and (min-width: 768px) {
+
+.top-nav {
+  width: 100%;
+}
+.wrapper {
+  margin: 10px auto 0px auto;
+ width: 100%;  
+  display: flex;
+  justify-content: flex-end;
+  color: black;
+  background-color: #ffffff;
+}
+
+.top-nav.fixed {
+  position: fixed;/*fixedで固定*/
+  right: 0;
+  top: 0;
+}
+.top-nav ul {
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+.item {
+  margin: 0 2em;
+  padding: 17px 0;
+  font-weight:bold;
+  
+}
+.top-label {
+  color: #000;
+  letter-spacing: 3px;
+  position: relative;
+}
+.top-label-2 {
+  color: #000;
+  letter-spacing: 3px;
+  position: relative;
+}
+.top-label::after,
+.top-label::before {
+  content: '';
+  display: block;
+  /* 初期状態でのwidthは0 */
+  width: 0;
+  height: 3px;
+  background: #000;
+  position: absolute;
+  bottom: 0;
+  transition: .5s;
+}
+/* 中心から線がスタートするので始点を50%の位置に移動する */
+.top-label::after {
+  left: 50%;
+}
+.top-label::before {
+  right: 50%;
+}
+
+/* マウスカーソルが乗っかると中心からwidthが50%ずつ伸びて100%の線になる */
+.top-label:hover::before,
+.top-label:hover::after {
+  width: 50%;
+}
+.item-1 {
+  justify-content: flex-start;
+  color:#d4f3f3 ;
+}
+.top {
+  background-color: #d4f3f3;
+}
+.top-main {
+  text-align: center;
+}
+.top-main > h2 {
+  padding-top: 20px;
+}
+.top-image {
+  width: 70%;
+  height: 600px;
+  object-fit: cover;
+  margin: 20px auto;
+}
+
+.top-image-text1 {
+  position: absolute;
+  top: 500px;
+  right: 100px;
+  font-size: 35px;
+  background-color: #ffffff;
+}
+.top-image-text2 {
+  position: absolute;
+  top: 570px;
+  right: 100px;
+  font-size: 35px;
+  background-color: #ffffff;
+}
+.top-image-text3 {
+  position: absolute;
+  top: 640px;
+  right: 100px;
+  font-size: 35px;
+  background-color: #ffffff;
+}
+#top-product {
+  width: 100%;
+}
+#top-product > h2 {
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 0px;
+  background-color: #e6f7f7;
+}
+
+.top-product-all {
+width: 100%;
+}
+.top-product-left {
+  display: flex;
+  justify-content: center;
+margin-bottom: 20px;
+background-color: #e6f7f7;
+width: 100%;
+
+}
+.top-product-left-image {
+  margin-left: 60px;
+  width: 21vw;
+  height: 28vw;
+}
+.top-product-left-image2 {
+  margin-left: 35px;
+  margin-top: 20px;
+  margin-bottom: 39px;
+  width: 21vw;
+  height: 28vw;
+}
+.js-fade {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(150px);
+  transition: 2s;
+}
+
+// フェードイン後
+.scroll {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+.top-product-right {
+  width: 30vw;
+}
+.top-product-right > h5 {
+  margin-top: 10px;
+  margin-left: 5px;
+  text-align: center;
+  width: 32vw;
+}
+.top-product-right-title {
+  margin: 20px auto;
+  padding: 0.5em 1em;
+  margin-top: 50px;
+  margin-left: 55px;
+  border: solid 3px #95ccff;
+  border-radius: 8px;
+}
+.top-product-right-title .box-title {
+  position: absolute;
+  top: -13px;
+  left: 10px;
+  padding: 0 9px;
+  line-height: 1;
+  font-size: 19px;
+  background: #FFF;
+  color: #95ccff;
+  font-weight: bold;
+}
+.top-product-left-text {
+  display: none;
+}
+.top-product-right-text{
+  margin-top: 8vw;
+  margin-left: 5vw;
+  position: relative;
+  padding: 20px;
+  background-color: #fff3ad;
+  border-radius: 10px;         /* 角丸を指定 */
+}
+.top-product-right-text::before{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: -15px;
+  top: 20px;
+  border-right: 15px solid #fff3ad;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+.top-concept-all {
+  width: 100%;
+  position: relative;
+}
+
+.top-concept-left-image1{
+  position: absolute;
+  top: 200px;
+  left: 40px;
+  width: 38vw;
+  height: 25vw;
+  margin-top: 50px;
+  margin-left: 80px;
+}
+
+.top-concept-right-image2 {
+  position: absolute;
+  left: 55vw;
+  margin-top: 150px;
+  margin-left: 100px;
+  margin-bottom: 80px;
+  width: 24vw;
+  height: 36vw;
+  object-fit:cover;
+}
+.top-concept-text {
+  margin-right: 40vw;
+  margin-top: 10vw;
+  font-size: 20px;
+  text-align: center;
+}
+
+}
+
+@media screen and (max-width: 767px) {
+
+
+  body {
+    min-width: 375px;
+    margin: 0;
+  }
+  .wrapper {
+   width: 100%;  
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    background-color: #ffffff;
+  }
+  .top-nav ul {
+    max-width: 100%;
+    display: flex;
+    
+
+    list-style: none;
+    margin: 0;
+    font-size:11px;
+  }
+  .top-nav.fixed {
+    position: fixed;/*fixedで固定*/
+    right: 0;
+    top: 0;
+  }
+  .item {
+    margin-left: 9px;
+    padding: 30px 0;
+    font-weight:bold;
+    
+  }
+  .item-1 {
+    justify-content: flex-start;
+    color:#d4f3f3 ;
+  }
+  .top-label {
+    color: #000;
+    letter-spacing: 3px;
+    position: relative;
+    margin-left: 5px;
+  }
+  .top-label::after,
+  .top-label::before {
+    content: '';
+    display: block;
+    /* 初期状態でのwidthは0 */
+    width: 0;
+    height: 3px;
+    background: #000;
+    position: absolute;
+    bottom: 0;
+    transition: .5s;
+  }
+  /* 中心から線がスタートするので始点を50%の位置に移動する */
+  .top-label::after {
+    left: 50%;
+  }
+  .top-label::before {
+    right: 50%;
+  }
+  
+  /* マウスカーソルが乗っかると中心からwidthが50%ずつ伸びて100%の線になる */
+  .top-label:hover::before,
+  .top-label:hover::after {
+    width: 50%;
+  }
+  .top {
+    background-color: #d4f3f3;
+  }
+  .top-main {
+    text-align: center;
+    width: 100%;
+    height: 530px;
+  }
+  .top-main > h2 {
+    padding-top: 12px;
+    font-size: 15px;
+  }
+  .top-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin: 20px auto;
+  }
+  .top-image-text1 {
+    display: inline;
+    font-size: 15px;
+    margin: 0 20px ;
+  }
+  .top-image-text2 {
+    display: inline;
+    font-size: 15px;
+    margin: 0 20px ;  
+  }
+  .top-image-text3 {
+    display: inline;
+    margin: 0 20px ;
+    font-size: 15px;  
+  }
+  #top-product > h2 {
+    text-align: center;
+    margin: 15px auto 10px auto;
+    font-size: 20px;
+  }
+  .top-product-left-text {
+    text-align: center;
+    margin: 30px auto;
+  }
+  .top-product-left-image {
+    width: 90%;
+    display: block;
+    margin: auto;
+  }
+  .top-product-left-image2 {
+    display: none;
+  }
+  .top-product-right > h5 {
+    display: none;
+  }
+  .top-product-right-text {
+    text-align: center;
+    margin: 20px auto;
+  }
+  .top-concept-all {
+    width: 100%;
+    position: relative;
+  }
+  .top-concept-left-image1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 75vw;
+    margin-top: 10px
+  }
+  .top-concept-all {
+    width: 100%;
+    position: relative;
+  }
+
+  .top-concept-right > h3 {
+    display: none;
+  }
+  .top-conept-img2 {
+    position: relative;
+    width: 100%;
+  }
+  .top-concept-right-image2 {
+    position: absolute;
+    top: 140vw;
+    left: 22vw;
+    width: 56vw;
+    height: 80vw;
+    margin: 0 auto;
+  }
+  .top-concept-text {
+    margin-top: 15vw;
+    margin-left: 8vw;
+    margin-right: 8vw;
+  }
+  .top-concept-text > p {
+    padding-top: 90vw;
+    width: 100%;
+    text-align: center;
+
+  }
+
+  .top-label-2 {
+    font-size:0;
+  }
+  .top-label-2::before {
+    font-size:11px;
+    content:'ゲスト(閲覧用)';
+    color: #000;
+    letter-spacing: 3px;
+    margin-left: 5px;
+  }
+}

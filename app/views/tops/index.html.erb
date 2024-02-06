@@ -1,3 +1,67 @@
-<h1>Tops#index</h1>
-<p>Find me in app/views/tops/index.html.erb</p>
+<div class ="wrapper">
+	<%= link_to root_path do %>
+		<%= image_tag "/images/resort_work.png",class:"item-1",size: "80x80" %>
+	<% end %>
+	<nav class="top-nav">
+		<ul>
+			<li class="item">
+				<%= link_to new_user_registration_path do %>
+					<label class="top-label">新規登録</label>
+				<% end %>
+			</li>
+			<li class="item">
+				<%= link_to login_path do %>
+					<label class="top-label">ログイン</label>
+				<% end %>
+			</li>
+			<li class="item">
+				<%= link_to tops_guest_sign_in_path, method: :post do %>
+					<label class="top-label-2">ゲストログイン（閲覧用）</label>
+				<% end %>
+			</li>
+		</ul>
+	</nav>
+</div>
 
+<section class="top">	
+	<div class ="top-main">
+		<h2>~さらなる充実へ理想の旅を~</h2>
+    <%= image_tag '/images/IMG_2614.JPG', class: "top-image" %>
+		<P class="top-image-text1">#全国各地で</P>
+		<P class="top-image-text2">#見つけよう</p>
+		<P class="top-image-text3">#繋がろう</p>
+	</div>
+</section>
+	<section id ="top-product">
+	 <h2>~思い出を共有しよう~</h2>
+		  <div class = "top-product-all">
+			  <div class="top-product-left">
+					<h5 class="top-product-left-text">resortworkとは？<br>リゾートバイトでの日常・思い出を<br>みんなに共有できる投稿サイトです。</h5>
+					<%= image_tag '/images/suno-keru.png',class: "top-product-left-image js-fade" %>
+					<%= image_tag '/images/sup.png',class: "top-product-left-image2 js-fade" %>
+						<div class="top-product-right">
+								<h5>resortworkとは？<br>リゾートバイトでの日常・思い出を<br>みんなに共有できる投稿サイトです。</h5>
+								<p class ="top-product-right-text">コメントで質問できます🙋‍♂️<br>気になる場所も検索しよう！
+						</div>
+				</div>
+			</div>
+	</section>
+
+	<section id ="top-concept">
+	 <div class ="top-concept-all">
+	    <ul class="top-concept-img1">
+				<%= image_tag '/images/umi4.jpg',class: "top-concept-left-image1" %>
+				<%= image_tag '/images/IMG_2613 2.JPG',class: "top-concept-left-image1" %>
+				<%= image_tag '/images/taketomi.JPG',class: "top-concept-left-image1" %>
+			 </div>
+			</ul>
+			<ul class="top-conept-img2">
+			 <%= image_tag '/images/hoshi.JPG',class: "top-concept-right-image2" %>
+			 <%= image_tag '/images/hoshi.JPG',class: "top-concept-right-image2" %>
+			 <%= image_tag '/images/IMG_8927.JPG',class: "top-concept-right-image2" %>
+			</ul>
+	 </div>
+	 <div class="top-concept-text">
+	   <p>このresortworkを通じて<br>たくさんの情報を知り<br>みなさんの選ぶきっかけになり<br>少しでも理想の日常に<br>繋がることができればいいなと思っています。</p>
+	 </div>
+	</section>
