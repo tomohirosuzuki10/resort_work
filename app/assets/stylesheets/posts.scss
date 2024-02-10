@@ -12,6 +12,7 @@ h2{
   font-style: oblique;
   text-shadow: 1px 1px 1px gray;
 }
+@media screen and (min-width: 768px) {
 .form-label {
   font-size: 20px;
   background-color: lightblue;
@@ -74,4 +75,107 @@ h3 {
   width: 440px;
   height: 337px;
   object-fit: contain;
+}
+.post-show {
+  display: flex;
+}
+.post-show-center {
+  display: block;
+  text-align: center;
+  margin-left: 20px;
+  position: relative;
+}
+.post-show-center > h2 {
+  margin-top: 10px;
+}
+.post-show-center > div {
+  margin-top: 30px;
+  width: 400px;
+}
+
+.post-show-form {
+  display: flex;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+.post-show-center-coment {
+  width: 300px;
+}
+.post-show-button {
+  background-color: #dee2ed;
+  margin-top: 30px;
+  background-color: aqua;
+}
+.post-show-center-icon {
+  display: flex;
+  font-size: 15px;
+}
+}
+
+@media screen and (max-width: 767px) {
+  .new-post {
+    width: 100%;
+  }
+  .form-group {
+    width: 100%
+  }
+  .post-show-boton {
+   margin-top: 0px;
+  }
+ .border-bottom {
+  margin-top: 20px;
+  font-size: 15px;
+ }
+ .post-show {
+  position: relative;
+ }
+ .post-show-center {
+  text-align: center;
+  margin: 0 auto;
+ }
+ .post-show-center > h2 {
+  margin-top: 10px;
+  font-size: 20px;
+  
+}
+.post-show-center > div {
+  margin-top: 30px;
+  
+}
+.post-show-form {
+  margin-top: 40px;
+}
+.show-post-img {
+  margin-top: 30px;
+}
+.post-show-center-icon {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 20px;
+}
+.post-index {
+  
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px auto;
+  align-items: center;
+  justify-content: center;
+}
+.post-article{
+  width: 333px;
+  height: 350px;
+  border: 1px solid #dee2ed;
+  margin: 5px;
+  background-color: #ffffff;
+}
+.post-article-name{
+  display: flex;
+  justify-content: space-between;
+}
+.new-post{
+  background-color: #eaf6fd;
+}
 }

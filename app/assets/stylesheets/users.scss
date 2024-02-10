@@ -7,9 +7,8 @@
 }
 .user-show-image{
     width: 100%;
-    height: 350px;
     background-color: #eaf6fd;
-    text-align: center;
+    display: flex;
     //height: 900px;
     //width: 100%;
    // background-image: url(/assets/umi4.jpg);
@@ -17,16 +16,30 @@
    //background-postion-x: center;
    //background-postion-y: center;
 }
-
+.user-show {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 .icon-mini{
-    margin-left: 20%;
-    margin-top: 10px;
+    margin-top: 30px;
     width: 200px;
     height: 200px;
     object-fit: cover;
     border-radius: 200px;
     cursor: pointer;
+  }
+  .user-show-text{
+    text-align: center;
+    margin-top: 40px;
+  }
+  .user-show-text2 {
+    margin-top: 10px;
+  }
+  .user-show--purofiru {
+    margin-left: 30px;
+    font-size: 20px;
   }
 .show-post-index {
   display: flex;
@@ -71,4 +84,51 @@
   }
   .show-user-edit {
     background-color: #eaf6fd;
+  }
+  .user-password {
+    text-align: center;
+    padding-top: 10px;
+    background-color: #d4f3f3;
+  }
+  .user-password > p {
+    margin-top: 30px;
+  }
+  .user-password-field {
+    margin-top: 15px;
+  }
+  .user-password-actions {
+    margin-top: 20px;
+  }
+  @media screen and (max-width: 767px) {
+
+    .user-show-image {
+      display: block;
+      text-align: center;
+    }
+    .user-show {
+      display: block;
+      justify-content: center;
+    }
+
+.icon-mini{
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+    margin-right: 0px;
+    object-fit: cover;
+    border-radius: 100px;
+    cursor: pointer;
+  }
+  .user-show-text{
+    text-align: center;
+    margin-top: 4px;
+  }
+  .user-show-text2 {
+    margin-top: 10px;
+  }
+  .user-show--purofiru {
+    margin-left: 30px;
+    font-size: 20px;
+  }
+
   }

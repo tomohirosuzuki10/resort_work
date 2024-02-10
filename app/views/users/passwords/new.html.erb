@@ -1,18 +1,19 @@
-<h2>パスワード再設定</h2>
- <p>ご登録時のメールアドレスを入力してください。<br>
- パスワード再発行用のメールをお送りします。
+<div class ="user-password">
+  <h2>パスワード再設定</h2>
+  <p>ご登録時のメールアドレスを入力してください。<br>
+    パスワード再発行用のメールをお送りします。
   </p>
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email, "メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="user-password-field">
+      <%= f.label :email, "メールアドレス" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "送信" %>
-  </div>
-<% end %>
+    <div class="user-password-actions">
+      <%= f.submit "送信" %>
+    </div>
+  <% end %>
+</div>
 
-<%= render "users/shared/links" %>

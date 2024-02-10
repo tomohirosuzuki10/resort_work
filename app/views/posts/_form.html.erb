@@ -1,37 +1,36 @@
 <div class="new-post">
-<div class="containerh">
- <div class="row justify-content-center">
-  <h1 class="font-weight-normal mt-3">新しい思い出</h2>
- </div>
- 
- <div class="row justify-content-center">
-   <%= form_with model: @post do |f|%>
-  
-   <div class="form-group">
-     <label class="form-label">タイトル</label>
-     <%= f.text_field :title, class: "form-control"%>
-   </div>
-   
-   <div class="form-group">
-     <label class="form-label">場所</label>
-     <%= f.text_field :post_place, class: "form-control"%>
-   </div>
+  <div class="contener">
+    <div class="row justify-content-center">
+      <h1 class="font-weight-normal mt-3">新しい思い出</h2>
+    </div>
+    
+    <div class="row justify-content-center">
+      <%= form_with model: @post do |f|%>
+      
+      <div class="form-group">
+        <label class="form-label">タイトル</label>
+        <%= f.text_field :title, class: "form-control"%>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">場所</label>
+        <%= f.text_field :post_place, class: "form-control"%>
+      </div>
 
-   <div class="form-group">
-    <label class="form-label">感想</label>
-    <%= f.text_area :post_content, rows: 10, class: "form-control", style: "width:100% high:100%"%>
-   </div>
-   <br>
-   <div class="form-group">
-     <label class="form-label">画像</label></br>
-     <%= f.file_field :post_images, multiple: true %>
-     <%= f.file_field :post_images, multiple: true %>
-   </div>
-   </br>
-   <div class="submit"> 
-    <%= f.submit "投稿する", class: "btn btn-success"%>
-   </div>
- </div>
-</div>
+      <div class="form-group">
+        <label class="form-label">感想</label>
+        <%= f.text_area :post_content, rows: 10, class: "form-control", style: "width:100% high:100%"%>
+      </div>
+      <br>
+      <div class="form-group">
+        <label class="form-label">画像</label></br>
+        <%= f.file_field :post_images, multiple: true %>
+      </div>
+      </br>
+      <div class="submit"> 
+        <%= f.submit "投稿する", class: "btn btn-success"%>
+      </div>
+    </div>
+  </div>
 </div>
 <% end %>

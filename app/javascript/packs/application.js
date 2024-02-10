@@ -73,4 +73,22 @@ $(function(){
 		$('.nav_toggle').on('click', function () {
 			$('.nav_toggle, .nav-sp').toggleClass('show');
 		});
+
+		document.addEventListener("DOMContentLoaded", function() {
+			// ハンバーガーメニューのトグルボタンを取得
+			const toggleButton = document.querySelector('.navbar-toggler');
+			// ナビゲーションコンテンツを取得
+			const navbarContent = document.querySelector('.navbar-collapse');
 		
+			// トグルボタンがクリックされたときの処理を定義
+			toggleButton.addEventListener('click', function() {
+				// ナビゲーションコンテンツが表示されている場合
+				if (navbarContent.classList.contains('show')) {
+					// ナビゲーションコンテンツを非表示にする
+					navbarContent.classList.remove('show');
+				} else {
+					// ナビゲーションコンテンツが非表示の場合、表示する
+					navbarContent.classList.add('show');
+				}
+			});
+		});

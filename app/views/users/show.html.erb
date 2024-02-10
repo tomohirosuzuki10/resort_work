@@ -1,22 +1,19 @@
-<div class="contener user-show-image">
-  <div class="row justify-content-center">
-   <div class="col-4 mt-5 ">
+<div class=" user-show-image">
+  <div class="user-show">
      <% if @user.image.attached? %>
       <%= image_tag @user.image, class: "icon-mini"%>
-     <% end %>
-   </div>
-   
-   <div class="col-4 mt-2">
+     <% end %>   
+   <div class="user-show-text">
      <h2><%= @user.name %></h2><br>
-      <div class="mt-3">
+      <div class="user-show-text2">
        <%= @user.human_attribute_enum(:sex)%>
       </div><br>
-      <div class="mt-3">
+      <div class="user-show-text2">
        <%= @user.prefecture.name%>
       </div><br>
-      <P class="mt-2"><%= @user.introduction %></P>
+      <P class="user-show-text2"><%= @user.introduction %></P>
    </div>
-   <div class="col-2">
+   <div class="user-show--purofiru">
       <% if current_user.present? %>
         <% if current_user.id == @user.id %>
           <%= link_to "プロフィール編集", "#{@user.id}/edit" %>
