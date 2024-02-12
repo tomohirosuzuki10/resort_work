@@ -20,9 +20,11 @@ class User < ApplicationRecord
   private
 
   def verify_file_type
-    return unless image.attached?  # ②
-
-    allowed_file_types = %w[image/jpg image/jpeg image/gif image/png]  # ③
-    errors.add(:user_icon, 'only jpg, jpeg, gif, png') unless allowed_file_types.include?(image.blob.content_type)  # ④
+    return unless image.attached?
+  
+    allowed_file_types = %w[image/jpg image/jpeg image/gif image/png]
+    unless allowed_file_types.include?(image.blob.content_type)
+      errors.add(:image, 'はJPEG、GIF、PNG形式の画像を選択してください')
+    end
   end
 end

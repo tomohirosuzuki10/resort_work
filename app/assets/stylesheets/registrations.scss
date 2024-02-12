@@ -1,5 +1,4 @@
 .akounto{
- text-align: center;
  border: 1px solid #000;
  padding-bottom: 10px;
  background-color: #d4f3f3;
@@ -9,11 +8,10 @@
 }
 .akounto-text{
 	display: inline-block;
-	text-align: left;
-	margin-left: 70px;
+	text-align:left;
 }
-.akounto-form {
-	margin-top: 8px;
+.akount-form {
+	width: 180px;
 }
 .akount-action {
  margin-top: 15px;

@@ -2,7 +2,10 @@
   <div class="user-show">
      <% if @user.image.attached? %>
       <%= image_tag @user.image, class: "icon-mini"%>
+      <% else %>
+      <p>No image available</p>
      <% end %>   
+     
    <div class="user-show-text">
      <h2><%= @user.name %></h2><br>
       <div class="user-show-text2">
