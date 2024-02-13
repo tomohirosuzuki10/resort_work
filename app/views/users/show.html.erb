@@ -39,10 +39,10 @@
        <%= image_tag image, size: '400x300' %>
       <% end %>
      <% end %><br>
-     <span>タイトル：<%= post.title %><span>
+     <span>タイトル：<%= link_to post.title, post_path(post)%><span>
      <br>
      <div class="mb-2">
-      <%= link_to post.post_content.truncate(70), post_path(post) %>
+      <%= post.post_content.truncate(70)%>
      </div>
     </div>
    <% end %>
