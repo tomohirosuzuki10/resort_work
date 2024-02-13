@@ -78,6 +78,7 @@ h3 {
 }
 .post-show {
   display: flex;
+  justify-content: center;
 }
 .post-show-center {
   display: block;
@@ -102,6 +103,11 @@ h3 {
 }
 .post-show-center-coment {
   width: 300px;
+}
+.post-show-comment {
+  margin-top: 20px;
+  margin-left: 10px;
+  border-bottom: solid 1px black;
 }
 .post-show-button {
   background-color: #dee2ed;
@@ -155,6 +161,11 @@ h3 {
   top: 0px;
   right: 0px;
   font-size: 20px;
+}
+.post-show-comment {
+  margin-top: 20px;
+  margin-left: 10px;
+  border-bottom: solid 1px black;
 }
 .post-index {
   

@@ -24,15 +24,17 @@
       </div>
       
       <div class="post-show-center-icon">
-        <%= link_to "/posts/#{@post.id}/edit" do %>
-          <i class="fa-regular fa-pen-to-square fa-size" style="color: #111722;"></i>
-        <% end %>
-        <%= link_to"/posts/#{@post.id}", method: :delete do %>
-          <i class="fa-regular fa-trash-can fa-size" style="color: #e52a33;"></i>
+        <% if current_user == @post.user%>
+          <%= link_to "/posts/#{@post.id}/edit" do %>
+            <i class="fa-regular fa-pen-to-square fa-size" style="color: #111722;"></i>
+          <% end %>
+          <%= link_to"/posts/#{@post.id}", method: :delete do %>
+            <i class="fa-regular fa-trash-can fa-size" style="color: #e52a33;"></i>
+          <% end %>
         <% end %>
       </div>
     </div>
-      <h3 class="border-bottom">コメント一覧
+      <h3 class="post-show-comment">コメント一覧
         <% if @post.favorited_by?(current_user) %>
           <%= link_to post_favorites_path(@post.id), method: :delete do %>
             <span>❤︎</span>
